@@ -1,12 +1,13 @@
 const express = require("express")
 const router = express.Router();
-const LogEntry = require("../db/models/LogEntry")
+const User = require("../db/models/User")
 
 router.post("/", (req,res) => {
-    LogEntry.create(req.body).then(logentry =>{
+    console.log("body",req.body)
+    User.create(req.body).then(user =>{
         res.status(200).send({
             success:true,
-            logentry: logentry
+            user: user
         })
     })
     .catch(err => {
@@ -15,32 +16,33 @@ router.post("/", (req,res) => {
 })
 
 router.get("/:id", (req,res) => {
-    LogEntry.findOne({
+    User.findOne({
         _id: req.params.id
-    }).then(logentry => {
+    }).then(user => {
         res.status(200).send({
             success:true,
-            logentry: logentry
+            user: user
         })
     })
     .catch(err => {
         console.log("err", err)
     })
 })
+
+
 router.put("/:id", (req,res) => {
-    LogEntry.findOneAndUpdate({
+    User.findOneAndUpdate({
         _id: req.params.id
-    }, req.body).then(logentry => {
+    }, req.body).then(user => {
         res.redirect("/")
-    })
+    }) 
     .catch(err=>{
         console.log("err", err)
-    }) 
-     
+    })  
 })
 
 router.delete("/:id", (req, res) => {
-    LogEntry.findOneAndDelete({
+    User.findOneAndDelete({
         _id: req.params.id
     }).then(() => {
         res.redirect("/");

@@ -1,0 +1,12 @@
+<h2>Title: {{title}}</h2>
+<h2>Name: {{name}}</h2>
+<h2>Description:</br> {{description}}</h2>
+<h2>Instructions:</br> {{instructions}}</h2>
+<h2>Ingredients:</br> {{ingredients}}</h2>
+
+<form class='show' action="/{{id}}?_method=delete" method="post">
+  <div class='container'>
+    <input id='delete' type="submit" value="DELETE">
+    <button ><a href="/edit/{{id}}">EDIT</a></button>
+  </div>
+</form>

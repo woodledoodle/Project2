@@ -1,0 +1,12 @@
+<h2>New Log Entry :</h2>
+
+<form id='new' action="/logentry" method="post" name='newForm'>
+
+  <label class='label' for="subject">Subject</label>
+  <input class='new' type="text" value="{{logentry.subject}}" name="subject" placeholder="Subject" required>
+  <label class='label' for="name">description</label>
+  <input class='new' type="text" value="{{logentry.description}}" name="description" placeholder="what is the issue" required>
+  <label class='label' for="resolution">resolution</label>
+  <input class='new extraSpace' type="text" value="{{logentry.resolution}}" name="resolution" placeholder="how was I resolved?" required>
+  <input id='newStuff' type="submit" value="Create">
+</form>

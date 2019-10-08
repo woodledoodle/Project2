@@ -1,0 +1,66 @@
+<h1>Onsolve</h1>
+
+{{!-- <ul>
+  {{#each logentries}}
+    <li>
+        <ul id="inner">
+            <li style= "display: inline-block;">{{this.date}}</li>
+            <li style= "display: inline-block;">
+                {{this.user.first}} {{this.user.last}}
+            </li>
+            <listyle= "display: inline-block;">
+                {{this.subject}}
+            </li>
+        </ul>
+    </li>
+  {{/each}}
+</ul> --}}
+<table>
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            User
+        </th>
+        <th>
+            subject
+        </th>
+        <th>
+            description
+        </th>
+        <th>
+            resolution
+        </th>
+    </tr>
+    {{#each logentries}}
+        <tr>
+            <td>
+                {{this.date}}
+            </td>
+            <td>
+                {{this.user.first}} {{this.user.last}}
+            </td>
+            <td>
+                {{this.subject}}
+            </td>
+            <td>
+                {{this.description}}
+            </td>
+            <td>
+                {{this.resolution}}
+            </td>
+            <td>
+                <a href="/logentry/edit/{{this._id}}">edit</a>
+            </td>
+            <td>
+                <form class='show' action="/logentry/{{this._id}}?_method=delete" method="post"><button type="submit">delete</button></form>
+            </td>
+        </tr>
+    {{/each}}
+</table>
+
+
+
+
+<button id='create'><a href="/logentry/new/">New Entry</a></button>

@@ -1,0 +1,11 @@
+<form id='edit' action="/logentry/{{logentry._id}}?_method=put" method="post">
+  <h2>Logs</h2>
+  <label class='label' for="subject">Subject</label>
+  <input class='new' type="text" value="{{logentry.subject}}" name="subject" placeholder="Subject" required>
+  <label class='label' for="name">description</label>
+  <input class='new' type="text" value="{{logentry.description}}" name="description" placeholder="what is the issue" required>
+  <label class='label' for="resolution">resolution</label>
+  <input class='new extraSpace' type="text" value="{{logentry.resolution}}" name="resolution" placeholder="how was I resolved?" required>
+  
+  <input id='changeStuff' type="submit" value="Update">
+</form>
