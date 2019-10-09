@@ -1,8 +1,5 @@
 const user =require("./user.json")
-
 const UserModel=require("./models/User")
-
-
 
   UserModel.deleteMany({})
   .then(() => {
