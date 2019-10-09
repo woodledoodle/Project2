@@ -2,7 +2,7 @@ const logentry = require("./logentry.json")
 const user =require("./user.json")
 
 const LogEntryModel = require("./models/LogEntry")
-const UserModel=require("./modelsUser")
+const UserModel=require("./models/User")
 
 LogEntryModel.deleteMany({})
   .then(() => {
