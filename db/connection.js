@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
-console.log("i didnt fail")
+
+mongoose.Promise = Promise;
 
 if (process.env.NODE_ENV === "production") 
     {mongoURI = process.env.DB_URL;
@@ -13,5 +14,5 @@ mongoose.connect(mongoURI, {
     .catch(err => {
         console.log("error", err)
     })
-mongoose.Promise = Promise;
+
 module.exports = mongoose;
