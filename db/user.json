@@ -6,5 +6,21 @@
         "email":"anthonybui@test.com",
         "password": "password"
 
+    },
+    {
+        "first":"bob",
+        "last":"pofu",
+        "username":"bobpofu@test.com",
+        "email":"bobpofu@test.com",
+        "password": "password"
+
+    },
+    {
+        "first":"bill",
+        "last":"nye",
+        "username":"billnye@test.com",
+        "email":"bullnye.com",
+        "password": "password"
+
     }
 ]
