@@ -1,7 +1,11 @@
 const mongoose = require("mongoose")
 console.log("i didnt fail")
 
-mongoose.connect("mongodb://localhost/project2", {
+if (process.env.NODE_ENV === "production") 
+    {mongoURI = process.env.DB_URL;
+    } else {mongoURI = "mongodb://localhost/project2";}
+
+mongoose.connect(mongoURI, {
     useNewUrlParser: true})
     .then(()=>{
         console.log("mongoose connected")
